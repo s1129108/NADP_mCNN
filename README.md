@@ -18,6 +18,47 @@ Photosynthesis relies on proteins with NADP+ binding sites for converting light 
 
 ## Quick Start:
 
-### Step 1: Generate features
+### Step 1: Generate Data Features
+
+Navigate to the data folder and utilize the FASTA file to produce additional data features, saving them in the dataset folder.
+
+General usage:
+
+```bash
+python get_ProtTrans.py -in "Your FASTA file folder" -out "The destination folder of your output"
+
+Example usage:
+
+```bash
+python get_ProtTrans.py -in ./seq -out ./protTrans_output
+
+### Step 2: Generate a complete dataset for training and testing
+
+Using the embedded sequences to group them into numpy data fro sequences and labels
+
+General usage:
+
+```bash
+python get_dataset.py -in "Your data feature Folder" -out "The destination folder of your output" -dt "Datatype of your feature" -w "Window Size" -label "Your data label Folder"  
+
+Example usage:
+
+```bash
+python get_dataset.py -in ./protTrans_output -out ./protTrans_dataset -dt .prottrans -w 7 -label ./label
+
+###Step 3: Execute prediction on complete dataset
+Navigate to MCNN folder to execute the prediction on NADP+ binding site proteins.
+
+Training usage:
+
+```bash
+
+python MCNN_NAD.py -d ProtTrans -n_dep 7 -ws 14 10 8 12 6 -n_feat 1280
+
+Predition usage:
+
+```bash
+
+python MCNN_NAD.py -d ProtTrans -n_dep 7 -ws 14 10 8 12 6 -n_feat 1280 -vm independent
 
 
