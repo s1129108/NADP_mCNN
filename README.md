@@ -30,7 +30,7 @@ python get_ProtTrans.py -in "Your FASTA file folder" -out "The destination folde
 Example usage:
 
 ```bash
-python get_ProtTrans.py -in ./seq -out ./protTrans_output
+python get_ProtTrans.py -in ./Train_seq/seq -out ./protTrans_output
 ````
 ### Step 2: Generate a complete dataset for training and testing
 
