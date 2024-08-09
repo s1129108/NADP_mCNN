@@ -4,6 +4,9 @@
 
 Photosynthesis relies on proteins with NADP+ binding sites for converting light energy into chemical energy. NADP+ and its reduced form, NADPH, are essential for redox reactions in cellular metabolism and photosynthesis, particularly in the Calvin cycle. This study explores the critical role of NADP+ binding proteins in photosynthesis, especially under pathogen stress. Advanced computational models like ProtTrans, ESM2, ESM1b, and a multi-window scanning CNN model have shown high accuracy in predicting NADP+ binding sites. Integrating these predictions, the study enhances understanding of NADP+ binding dynamics, offering insights that could improve crop yields and sustainable energy solutions. This research connects computational predictions with experimental validation, advancing agricultural biotechnology and photosynthesis research.
 
+![Ferredoxin](https://github.com/user-attachments/assets/5acd2405-ad96-4737-b23b-61bb1d30bf96)
+
+
 ## Graphical Abstract:
 
 <img width="345" alt="image" src="https://github.com/user-attachments/assets/d7c696f7-e253-4c73-b9d9-ec8270ae6104">
@@ -48,18 +51,18 @@ python get_dataset.py -in ./protTrans_output -out ./protTrans_dataset -dt .prott
 ````
 
 ### Step 3: Execute prediction on complete dataset
-Navigate to MCNN folder to execute the prediction on NADP+ binding site proteins.
+Navigate to Code folder to execute the prediction on NADP+ binding site proteins.
 
 Training usage:
 
 ```bash
 
-python MCNN_NAD.py -d ProtTrans -n_dep 7 -ws 14 10 8 12 6 -n_feat 1280
+python MCNN.py -d ProtTrans -n_dep 7 -ws 14 10 8 12 6 -n_feat 1280
 ````
 Predition usage:
 
 ```bash
 
-python MCNN_NAD.py -d ProtTrans -n_dep 7 -ws 14 10 8 12 6 -n_feat 1280 -vm independent
+python MCNN.py -d ProtTrans -n_dep 7 -ws 14 10 8 12 6 -n_feat 1280 -vm independent
 ````
 
